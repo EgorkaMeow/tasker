@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+}
+
+.name_td {
+    width: 20%;
+}
+
+.email_td {
+    width: 20%;
+}
+
+.task_td {
+    width: 40%;
+}
+
+.status_td {
+    width: 15%;
+}
+
+.not_tasks {
+    text-align: center;
+}
+
+.is_edit {
+    font-size: 70%;
+    font-style: italic;
+}
+
+.pag_item {
+    padding: 0 3px;
+}

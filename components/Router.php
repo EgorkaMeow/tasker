@@ -1,0 +1,25 @@
+<?php
+    class Router {
+        private static $routes = [];
+
+        private function __construct() {}
+        private function __clone() {}
+
+        public static function route($method, $pattern, $callback)
+        {
+            $pattern = '/^' . str_replace('/', '\/', $pattern) . '$/';
+            self::$routes[$method][$pattern] = $callback;
+        }
+   
+        public static function execute($url, $request_method)
+        {   
+            foreach (self::$routes[$request_method] as $pattern => $callback)
+            {
+                if (preg_match($pattern, $url, $params))
+                {
+                    array_shift($params);
+                    return call_user_func_array($callback, array_values($params));
+                }
+            }
+        }
+    }
